@@ -26,7 +26,7 @@ public:
         while (current->link != head)
         {
             Node *next = current->link;
-            delete current;
+            delete current; 
             current = next;
         }
     }
@@ -74,8 +74,6 @@ int main()
     LinkedList list;
     for (int i = 1; i <= 5; i++)
         list.createList(i);
-
     list.printList();
-
     return 0;
 }
