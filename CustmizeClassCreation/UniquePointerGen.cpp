@@ -5,9 +5,11 @@ class Unq
 {
 public:
     Unq() {
+        cout<<"Ctor "<<endl;
         ptr = new T(); // value-initialize T
     }
     Unq(const T& value) {
+        cout<<" parameter Ctor "<<endl;
         ptr = new T(value); // initialize with value
     }
     Unq(const Unq &ptr) = delete;
@@ -15,11 +17,13 @@ public:
 
     Unq(Unq &&obj)
     {
+        cout<<"move copy "<<endl;
         ptr = obj.ptr;
         obj.ptr = nullptr;
     }
     Unq &operator=(Unq &&obj)
     {
+        cout<<"move assignement "<<endl;
         if (this != &obj)
         {
             delete ptr;
